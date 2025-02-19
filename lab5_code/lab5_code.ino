@@ -4,8 +4,8 @@ BLEService newService("180A"); // creating the service
 BLEByteCharacteristic readChar("2A57", BLERead);
 BLEByteCharacteristic writeChar("2A58", BLEWrite);
 
-const int trigPin = 11;
-const int echoPin = 12;
+const int trigPin = 8;
+const int echoPin = 10;
 long duration;
 int distanceCm, distanceInch;
 
@@ -21,7 +21,7 @@ void setup() {
       while(1);
     }
 
-  BLE.setDeviceName("Ai and Johnny");
+  BLE.setLocalName("Ai and Johnny");
   BLE.setAdvertisedService(newService);
   newService.addCharacteristic(readChar);
   newService.addCharacteristic(writeChar);
